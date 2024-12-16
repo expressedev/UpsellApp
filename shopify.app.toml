@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "264af22d5700c32542bd100c347ca7b9"
+application_url = "https://viewer-tons-revelation-discussions.trycloudflare.com"
+embedded = true
+name = "upsell-technical"
+handle = "upsell-technical"
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "technical-assessment.myshopify.com"
+include_config_on_deploy = true
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products, read_products"
+
+[auth]
+redirect_urls = [
+  "https://viewer-tons-revelation-discussions.trycloudflare.com/auth/callback",
+  "https://viewer-tons-revelation-discussions.trycloudflare.com/auth/shopify/callback",
+  "https://viewer-tons-revelation-discussions.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
